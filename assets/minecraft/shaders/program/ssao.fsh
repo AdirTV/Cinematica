@@ -1,9 +1,10 @@
-#version 110
+#version 150
 
 uniform sampler2D DiffuseSampler;
 uniform sampler2D DiffuseDepthSampler;
 
-varying vec2 texCoord;
+in vec2 texCoord;
+out vec4 fragColor;
 
 #define TAPS 6
 #define DISTANCE 12
@@ -54,6 +55,6 @@ void main() {
 
   float shadow = depth < ( 1.0 - 1.0 / 1024.0 ) ? clamp( smoothstep( 0.0, 0.5, ao ), 0.0, 1.0 ) : 1.0;
 
-  gl_FragColor = vec4( mix( color * 0.5, color, shadow ), 1.0 );
+  fragColor = vec4( mix( color * 0.5, color, shadow ), 1.0 );
   gl_FragDepth = depth;
 }
