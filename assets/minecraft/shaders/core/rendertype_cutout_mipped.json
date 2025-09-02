@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "blend": {
     "func": "add",
     "srcrgb": "srcalpha",
@@ -13,12 +14,18 @@
     "UV2",
     "Normal"
   ],
+=======
+  "vertex": "rendertype_cutout_mipped",
+  "fragment": "rendertype_cutout_mipped",
+  "blend": {"func": "add", "srcrgb": "srcalpha", "dstrgb": "1-srcalpha"},
+>>>>>>> 6b806797ebf5c443ab5452aa0b02f15aa5f8cabe
   "samplers": [
     { "name": "Sampler0" },
     { "name": "Sampler2" }
   ],
   "uniforms": [
     {
+<<<<<<< HEAD
       "name": "ModelViewMat",
       "type": "matrix4x4",
       "count": 16,
@@ -75,6 +82,14 @@
       "type": "int",
       "count": 1,
       "values": [0]
+=======
+      "name": "ModelViewMat", "type": "matrix4x4", "count": 16,
+      "values": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]
+    },
+    {
+      "name": "ProjMat", "type": "matrix4x4", "count": 16,
+      "values": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]
+>>>>>>> 6b806797ebf5c443ab5452aa0b02f15aa5f8cabe
     }
   ]
 }

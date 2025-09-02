@@ -1,6 +1,6 @@
 {
-   "pack": {
-      "pack_format": 5,
-      "description": "Enable Fabulous graphics!\n§bBy @Xilefian"
-   }
+  "pack": {
+    "pack_format": 15,
+    "description": "Cinematica Vanilla Shaders (1.20–1.20.1) – core override"
+  }
 }
