@@ -1,0 +1,103 @@
+{
+  "targets": [
+    "water",
+    "translucent",
+    "itemEntity",
+    "particles",
+    "clouds",
+    "weather",
+    "final"
+  ],
+  "passes": [{
+      "name": "ssao",
+      "intarget": "minecraft:main",
+      "outtarget": "final",
+      "auxtargets": [{
+        "name": "DiffuseDepthSampler",
+        "id": "minecraft:main:depth"
+      }]
+    },
+    {
+      "name": "blur_translucent",
+      "intarget": "final",
+      "outtarget": "minecraft:main",
+      "auxtargets": [{
+        "name": "DiffuseDepthSampler",
+        "id": "final:depth"
+      },
+      {
+        "name": "TranslucentDepthSampler",
+        "id": "translucent:depth"
+      },
+      {
+        "name": "CloudsDepthSampler",
+        "id": "clouds:depth"
+      }]
+    },
+    {
+      "name": "transparency",
+      "intarget": "minecraft:main",
+      "outtarget": "final",
+      "auxtargets": [{
+          "name": "DiffuseDepthSampler",
+          "id": "minecraft:main:depth"
+        },
+        {
+          "name": "TranslucentSampler",
+          "id": "translucent"
+        },
+        {
+          "name": "TranslucentDepthSampler",
+          "id": "translucent:depth"
+        },
+        {
+          "name": "ItemEntitySampler",
+          "id": "itemEntity"
+        },
+        {
+          "name": "ItemEntityDepthSampler",
+          "id": "itemEntity:depth"
+        },
+        {
+          "name": "ParticlesSampler",
+          "id": "particles"
+        },
+        {
+          "name": "ParticlesDepthSampler",
+          "id": "particles:depth"
+        },
+        {
+          "name": "CloudsSampler",
+          "id": "clouds"
+        },
+        {
+          "name": "CloudsDepthSampler",
+          "id": "clouds:depth"
+        },
+        {
+          "name": "WeatherSampler",
+          "id": "weather"
+        },
+        {
+          "name": "WeatherDepthSampler",
+          "id": "weather:depth"
+        }
+      ]
+    },
+    {
+      "name": "bloom",
+      "intarget": "final",
+      "outtarget": "minecraft:main"
+    },
+    {
+      "name": "chromatic",
+      "intarget": "minecraft:main",
+      "outtarget": "final"
+    },
+    {
+      "name": "fxaa",
+      "intarget": "final",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}
